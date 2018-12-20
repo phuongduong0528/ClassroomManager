@@ -38,6 +38,25 @@ namespace ClassroomManager.DbManager.Manager
             return phongHoc;
         }
 
+        public List<string> GetCoSo()
+        {
+            return entities.CoSoes.Select(cs => cs.TenCoSo).ToList();
+        }
+
+        public List<string> GetLoaiPhong()
+        {
+            return entities.LoaiPhongs.Select(lp => lp.TenLoaiPhong).ToList();
+        }
+
+        public List<string> GetNha(string cs)
+        {
+            if(cs != "")
+            {
+                return entities.ToaNhas.Where(tn => tn.CoSo.TenCoSo.Equals(cs)).Select(tn2 => tn2.TenToaNha).ToList();
+            }
+            return entities.ToaNhas.Select(tn => tn.TenToaNha).ToList();
+        }
+
         public bool Update(PhongHoc ph)
         {
             try

@@ -65,6 +65,15 @@
     <Compile Include="LogInWindow.xaml.cs">
       <DependentUpon>LogInWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddPhongHocWindow.xaml.cs">
+      <DependentUpon>AddPhongHocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="QLPhongHocWindow.xaml.cs">
+      <DependentUpon>QLPhongHocWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdatePhongHocWindow.xaml.cs">
+      <DependentUpon>UpdatePhongHocWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -85,6 +94,18 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="LogInWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddPhongHocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="QLPhongHocWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdatePhongHocWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

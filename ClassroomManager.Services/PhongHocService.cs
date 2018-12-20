@@ -26,6 +26,21 @@ namespace ClassroomManager.Services
             return phongHocAdaptor.GetListPhongHocDto(PhongHocManager.GetByCoSo(cs, nha));
         }
 
+        public List<string> GetCoSo()
+        {
+            return PhongHocManager.GetCoSo();
+        }
+
+        public List<string> GetLoaiPhong()
+        {
+            return PhongHocManager.GetLoaiPhong();
+        }
+
+        public List<string> GetNha(string cs)
+        {
+            return PhongHocManager.GetNha(cs);
+        }
+
         public bool Update(PhongHocDto phongHocDto)
         {
             return PhongHocManager.Update(phongHocAdaptor.ToPhongHocEntity(phongHocDto));

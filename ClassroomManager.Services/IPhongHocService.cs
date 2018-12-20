@@ -21,6 +21,24 @@ namespace ClassroomManager.Services
         List<PhongHocDto> GetByCoSo(string cs, string nha);
 
         [OperationContract]
+        [WebGet(
+            UriTemplate = "/CoSo",
+            ResponseFormat = WebMessageFormat.Json)]
+        List<string> GetCoSo();
+
+        [OperationContract]
+        [WebGet(
+            UriTemplate = "/Nha?cs={cs}",
+            ResponseFormat =  WebMessageFormat.Json)]
+        List<string> GetNha(string cs);
+
+        [OperationContract]
+        [WebGet(
+            UriTemplate = "/LoaiPhong",
+            ResponseFormat = WebMessageFormat.Json)]
+        List<string> GetLoaiPhong();
+
+        [OperationContract]
         [WebInvoke(
             UriTemplate = "/PhongHoc",
             Method = "POST",

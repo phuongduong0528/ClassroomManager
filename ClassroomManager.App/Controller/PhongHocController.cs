@@ -24,6 +24,30 @@ namespace ClassroomManager.App.Controller
             return respond;
         }
 
+        public async Task<List<string>> GetCoSo()
+        {
+            RequestController<List<string>> controller = new RequestController<List<string>>();
+            controller.Url = baseUrl + $"/CoSo";
+            List<string> respond = await controller.GetData();
+            return respond;
+        }
+
+        public async Task<List<string>> GetNha(string pcs)
+        {
+            RequestController<List<string>> controller = new RequestController<List<string>>();
+            controller.Url = baseUrl + $"/Nha?cs={pcs}";
+            List<string> respond = await controller.GetData();
+            return respond;
+        }
+
+        public async Task<List<string>> GetLoaiPhong()
+        {
+            RequestController<List<string>> controller = new RequestController<List<string>>();
+            controller.Url = baseUrl + $"/LoaiPhong";
+            List<string> respond = await controller.GetData();
+            return respond;
+        }
+
         public async Task<bool> Add(PhongHocDto phongHocDto)
         {
             RequestController<bool> controller = new RequestController<bool>();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ClassroomManager.App.Controller;
+using ClassroomManager.Services.Dto;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,14 +22,102 @@ namespace ClassroomManager.App
     /// </summary>
     public partial class MainWindow : Window
     {
+        PhongHocController phongHocController;
+        List<Services.Dto.PhongHocDto> listPhs;
         public MainWindow()
         {
             InitializeComponent();
+            phongHocController = new PhongHocController(Ultilities.ip, Ultilities.port);
         }
 
-        private void MainFromLoaded(object sender, RoutedEventArgs e)
+        private async void MainFromLoaded(object sender, RoutedEventArgs e)
         {
+            cbxCoSo.ItemsSource = await phongHocController.GetCoSo();
+            cbxCoSo.SelectedIndex = 2;
+            cbxNha.ItemsSource = await phongHocController.GetNha(cbxCoSo.SelectedItem.ToString());
+            cbxNha.SelectedIndex = 1;
+            try
+            {
+                listPhs = await phongHocController.GetByCoSo(cbxCoSo.SelectedItem.ToString(), cbxNha.SelectedItem.ToString());
+                gvPhongHoc.ItemsSource = listPhs;
+                gvPhongHoc.Columns[0].Visibility = Visibility.Hidden;
+            }
+            catch(Exception ex)
+            {
+                
+            }
+        }
 
+        private async void CbxCoSo_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                cbxNha.ItemsSource = await phongHocController.GetNha(cbxCoSo.SelectedItem.ToString());
+                cbxNha.SelectedIndex = 0;
+                listPhs = await phongHocController.GetByCoSo(cbxCoSo.SelectedItem.ToString(), cbxNha.SelectedItem.ToString());
+                gvPhongHoc.ItemsSource = listPhs;
+                gvPhongHoc.Columns[0].Visibility = Visibility.Hidden;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private async void CbxNha_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                listPhs = await phongHocController.GetByCoSo(cbxCoSo.SelectedItem.ToString(), cbxNha.SelectedItem.ToString());
+                gvPhongHoc.ItemsSource = listPhs;
+                gvPhongHoc.Columns[0].Visibility = Visibility.Hidden;
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnThem_Click(object sender, RoutedEventArgs e)
+        {
+            AddPhongHocWindow addPhongHocWindow = new AddPhongHocWindow(cbxNha.SelectedItem.ToString());
+            addPhongHocWindow.Closed += AddPhongHocWindow_Closed;
+            addPhongHocWindow.Show();
+        }
+
+        private async void AddPhongHocWindow_Closed(object sender, EventArgs e)
+        {
+            listPhs = await phongHocController.GetByCoSo(cbxCoSo.SelectedItem.ToString(), cbxNha.SelectedItem.ToString());
+            gvPhongHoc.ItemsSource = listPhs;
+            gvPhongHoc.Columns[0].Visibility = Visibility.Hidden;
+        }
+
+        private void BtnUpdate_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                PhongHocDto phongHoc = gvPhongHoc.SelectedItem as PhongHocDto;
+                UpdatePhongHocWindow window = new UpdatePhongHocWindow(phongHoc);
+                window.Closed += Window_Closed;
+                window.Show();
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
+
+        private async void Window_Closed(object sender, EventArgs e)
+        {
+            listPhs = await phongHocController.GetByCoSo(cbxCoSo.SelectedItem.ToString(), cbxNha.SelectedItem.ToString());
+            gvPhongHoc.ItemsSource = listPhs;
+            gvPhongHoc.Columns[0].Visibility = Visibility.Hidden;
+        }
+
+        private void GvPhongHoc_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            QLPhongHocWindow window = new QLPhongHocWindow();
+            window.Show();
         }
     }
 }

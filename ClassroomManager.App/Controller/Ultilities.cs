@@ -11,7 +11,7 @@ namespace ClassroomManager.App.Controller
     public class Ultilities
     {
         public static string ip;
-        public static int port;
+        public static string port;
         public static string idUser;
 
         public static string ToHashString(string str)
