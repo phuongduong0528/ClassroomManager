@@ -37,6 +37,11 @@ namespace ClassroomManager.Services
             return thietBiAdaptor.GetListThietBiDto(ThietBiManager.GetByFilter(group, name));
         }
 
+        public List<string> GetNhomTB()
+        {
+            return ThietBiManager.GetNhomTB();
+        }
+
         public bool Update(ThietBiDto thietBiDto)
         {
             return ThietBiManager.Update(thietBiAdaptor.ToThietBiEntity(thietBiDto));

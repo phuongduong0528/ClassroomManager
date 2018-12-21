@@ -16,6 +16,7 @@ namespace ClassroomManager.Services.Adaptor
             thietBiDto.MaThietBi = thietBi.MaThietBi;
             thietBiDto.TenThietBi = thietBi.TenThietBi;
             thietBiDto.NhomThietBi = thietBi.NhomThietBi.TenNhomThietBi;
+            thietBiDto.TongSoLuong = thietBi.TongSoLuong;
             return thietBiDto;
         }
 
@@ -40,6 +41,7 @@ namespace ClassroomManager.Services.Adaptor
                     .FirstOrDefault(ntb => ntb.TenNhomThietBi.Equals(thietBiDto.NhomThietBi))
                     .MaNhomThietBi;
             }
+            thietBi.TongSoLuong = thietBiDto.TongSoLuong;
             return thietBi;
         }
     }

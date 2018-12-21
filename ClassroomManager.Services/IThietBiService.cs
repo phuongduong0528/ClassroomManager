@@ -27,6 +27,13 @@ namespace ClassroomManager.Services
         List<ThietBiDto> GetByFilter(string group, string name);
 
         [OperationContract]
+        [WebGet(
+            UriTemplate = "/NTB",
+            BodyStyle = WebMessageBodyStyle.WrappedRequest,
+            ResponseFormat = WebMessageFormat.Json)]
+        List<string> GetNhomTB();
+
+        [OperationContract]
         [WebInvoke(
             UriTemplate = "/ThietBi",
             Method = "POST",

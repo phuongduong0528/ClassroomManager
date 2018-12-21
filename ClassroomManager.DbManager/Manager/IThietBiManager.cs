@@ -11,6 +11,7 @@ namespace ClassroomManager.DbManager.Manager
     {
         List<ThietBi> GetAll();
         List<ThietBi> GetByFilter(string group, string name);
+        List<string> GetNhomTB();
         bool Add(ThietBi thietBi);
         bool Update(ThietBi thietBi);
         bool Delete(int id);

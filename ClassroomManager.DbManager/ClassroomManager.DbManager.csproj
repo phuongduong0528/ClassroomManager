@@ -68,6 +68,10 @@
     <Compile Include="Migrations\201812182313050_AddNewRowTUser.Designer.cs">
       <DependentUpon>201812182313050_AddNewRowTUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812210144435_AddRowThietBiTable.cs" />
+    <Compile Include="Migrations\201812210144435_AddRowThietBiTable.Designer.cs">
+      <DependentUpon>201812210144435_AddRowThietBiTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ClassroomManagerEntities.cs" />
     <Compile Include="Models\CoSo.cs" />
@@ -91,6 +95,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812182313050_AddNewRowTUser.resx">
       <DependentUpon>201812182313050_AddNewRowTUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812210144435_AddRowThietBiTable.resx">
+      <DependentUpon>201812210144435_AddRowThietBiTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -58,6 +58,11 @@ namespace ClassroomManager.DbManager.Manager
             return thietBis;
         }
 
+        public List<string> GetNhomTB()
+        {
+            return entities.NhomThietBis.Select(ntb => ntb.TenNhomThietBi).ToList();
+        }
+
         public bool Update(ThietBi thietBi)
         {
             try

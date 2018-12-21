@@ -24,6 +24,9 @@ namespace ClassroomManager.DbManager.Models
         [StringLength(50)]
         public string TenThietBi { get; set; }
 
+        [Required]
+        public int TongSoLuong { get; set; }
+
         public virtual NhomThietBi NhomThietBi { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

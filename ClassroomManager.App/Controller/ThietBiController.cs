@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace ClassroomManager.App.Controller
 {
-    public class ThietBiService
+    public class ThietBiController
     {
         private string baseUrl;
-        public ThietBiService(string ip, string port)
+        public ThietBiController(string ip, string port)
         {
             baseUrl = $"http://{ip}:{port}/ClassroomManager.Services/ThietBiService";
         }
@@ -29,6 +29,14 @@ namespace ClassroomManager.App.Controller
             RequestController<List<ThietBiDto>> controller = new RequestController<List<ThietBiDto>>();
             controller.Url = baseUrl + $"/ThietBi?g={group}&n={name}";
             List<ThietBiDto> respond = await controller.GetData();
+            return respond;
+        }
+
+        public async Task<List<string>> GetNhomTB()
+        {
+            RequestController<List<string>> controller = new RequestController<List<string>>();
+            controller.Url = baseUrl + $"/NTB";
+            List<string> respond = await controller.GetData();
             return respond;
         }
 

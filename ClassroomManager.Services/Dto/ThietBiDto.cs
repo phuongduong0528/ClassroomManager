@@ -18,5 +18,8 @@ namespace ClassroomManager.Services.Dto
 
         [DataMember(Name = "NhomThietBi", Order = 2)]
         public string NhomThietBi { get; set; }
+
+        [DataMember(Name = "TongSoLuong", Order = 3)]
+        public int TongSoLuong { get; set; }
     }
 }
