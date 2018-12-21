@@ -38,7 +38,8 @@ namespace ClassroomManager.App
         {
             if(tabControl.SelectedIndex == 0)
             {
-
+                UpdateThietBiPhongHoc window = new UpdateThietBiPhongHoc(phongHoc);
+                window.Show();
             }
             else
             {

@@ -5,13 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="UpdateThietBiPhongHoc" Height="203.413" Width="428.043">
+        Title="UpdateThietBiPhongHoc" Height="203.413" Width="428.043" Loaded="Window_Loaded">
     <Grid>
         <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Height="37" Margin="94,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
         <Label Content="Số lượng" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="12,67,0,0" VerticalAlignment="Top" Height="34"/>
         <Button Content="OK" FontSize="18" HorizontalAlignment="Left" Margin="101,117,0,0" VerticalAlignment="Top" Width="106" Height="40"/>
         <Button Content="HỦY" FontSize="18" HorizontalAlignment="Left" Margin="237,117,0,0" VerticalAlignment="Top" Width="106" Height="40"/>
-        <ComboBox HorizontalAlignment="Left" Margin="94,22,0,0" VerticalAlignment="Top" Width="295" Height="37"/>
+        <ComboBox x:Name="cbxThietBi" HorizontalAlignment="Left" Margin="94,22,0,0" VerticalAlignment="Top" Width="295" Height="37"/>
         <Label Content="Thiết bị" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="25,22,0,0" VerticalAlignment="Top" Height="34"/>
 
     </Grid>

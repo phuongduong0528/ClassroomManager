@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="QLThietBiWindow" Height="450" Width="785" Loaded="Window_Loaded">
+        Title="QLThietBiWindow" Height="450" Width="830" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="VerticalContentCentering3"
                TargetType="{x:Type DataGridCell}">
@@ -22,15 +22,15 @@
     </Window.Resources>
     <Grid>
         <ToolBar Height="36" VerticalAlignment="Top">
-            <Button x:Name="btnThemQLTB" Content=" Thêm" FontFamily="Segoe UI Symbol" FontSize="15" Margin="0,0,0,-5" Width="113" VerticalAlignment="Stretch"/>
-            <Button x:Name="btnUpdateQLTB" Content=" Thay đổi" FontFamily="Segoe UI Symbol" FontSize="15" Margin="0,0,0,-5" Width="113" VerticalAlignment="Stretch"/>
+            <Button x:Name="btnThemQLTB" Content=" Thêm" FontFamily="Segoe UI Symbol" FontSize="15" Margin="0,0,0,-5" Width="113" VerticalAlignment="Stretch" Click="BtnThemQLTB_Click"/>
+            <Button x:Name="btnUpdateQLTB" Content=" Thay đổi" FontFamily="Segoe UI Symbol" FontSize="15" Margin="0,0,0,-5" Width="113" VerticalAlignment="Stretch" Click="BtnUpdateQLTB_Click"/>
             <Label Content="Tên TB" FontSize="15" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top" Width="53"/>
             <TextBox x:Name="txtbTenTB" Margin="0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Stretch" Width="142" BorderBrush="#FF0068FF"/>
             <Label Content="Loại TB" FontSize="15" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top" Width="62" BorderBrush="#FF0068FF"/>
-            <ComboBox Height="31" Margin="0" FontSize="15" VerticalAlignment="Top" Width="141" BorderBrush="#FF0068FF"/>
+            <ComboBox x:Name="cbxLoaiTb" Height="31" Margin="0" FontSize="15" VerticalAlignment="Top" Width="141" BorderBrush="#FF0068FF"/>
             <Label Content="Số lượng" FontSize="15" VerticalContentAlignment="Center" Height="31" VerticalAlignment="Top" Width="75"/>
-            <TextBox x:Name="txtbTenTB_Copy" Margin="0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Stretch" Width="48" BorderBrush="#FF0068FF"/>
+            <TextBox x:Name="txtbSoLuong" Margin="0" TextWrapping="Wrap" Text="" FontSize="15" VerticalAlignment="Stretch" Width="48" BorderBrush="#FF0068FF" PreviewTextInput="TxtbSoLuong_PreviewTextInput"/>
         </ToolBar>
-        <DataGrid x:Name="gvThietBi" Margin="0,41,0,0" IsReadOnly="True" CellStyle="{StaticResource VerticalContentCentering3}" RowHeight="30" FontSize="14" HorizontalGridLinesBrush="Gray" VerticalGridLinesBrush="Gray" ColumnWidth="*"/>
+        <DataGrid x:Name="gvThietBi" Margin="0,41,0,0" IsReadOnly="True" CellStyle="{StaticResource VerticalContentCentering3}" RowHeight="30" FontSize="14" HorizontalGridLinesBrush="Gray" VerticalGridLinesBrush="Gray" ColumnWidth="*" SelectionChanged="GvThietBi_SelectionChanged"/>
     </Grid>
 </Window>

@@ -29,7 +29,7 @@
                 </LinearGradientBrush>
             </Menu.Background>
             <MenuItem Header="Chức năng" HorizontalContentAlignment="Center" Height="30" Width="87" FontSize="15">
-                <MenuItem Header="QL Thiết bị" HorizontalAlignment="Left" Height="30" Width="170"/>
+                <MenuItem x:Name="menuItemQLTB" Header="QL Thiết bị" HorizontalAlignment="Left" Height="30" Width="170" Click="MenuItemQLTB_Click"/>
                 <MenuItem Header="Thống kê" HorizontalAlignment="Left" Height="30" Width="170"/>
             </MenuItem>
             <MenuItem Header="Quản trị" HorizontalContentAlignment="Center" Height="30" Width="74" FontSize="15"/>

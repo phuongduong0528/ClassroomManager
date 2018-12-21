@@ -70,7 +70,8 @@ namespace ClassroomManager.DbManager.Manager
                 ThietBi temp = entities.ThietBis.SingleOrDefault(tb => tb.MaThietBi == thietBi.MaThietBi);
                 temp.MaNhomThietBi = thietBi.MaNhomThietBi;
                 temp.TenThietBi = thietBi.TenThietBi;
-                entities.Entry(thietBi).State = System.Data.Entity.EntityState.Modified;
+                temp.TongSoLuong = thietBi.TongSoLuong;
+                entities.Entry(temp).State = System.Data.Entity.EntityState.Modified;
                 entities.SaveChanges();
                 return true;
             }

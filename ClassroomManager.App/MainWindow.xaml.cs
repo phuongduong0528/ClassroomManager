@@ -119,5 +119,11 @@ namespace ClassroomManager.App
             QLPhongHocWindow window = new QLPhongHocWindow();
             window.Show();
         }
+
+        private void MenuItemQLTB_Click(object sender, RoutedEventArgs e)
+        {
+            QLThietBiWindow window = new QLThietBiWindow();
+            window.Show();
+        }
     }
 }
