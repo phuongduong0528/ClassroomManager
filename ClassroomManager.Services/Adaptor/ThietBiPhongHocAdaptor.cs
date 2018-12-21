@@ -44,6 +44,7 @@ namespace ClassroomManager.Services.Adaptor
                     .FirstOrDefault(tb => tb.TenThietBi.Equals(tbphDto.ThietBi))
                     .MaThietBi;
             }
+            tbph.SoLuong = tbphDto.SoLuong;
             return tbph;
         }
     }

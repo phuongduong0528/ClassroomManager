@@ -5,14 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="UpdateThietBiPhongHoc" Height="203.413" Width="428.043" Loaded="Window_Loaded">
+        Title="UpdateThietBiPhongHoc" Height="251.413" Width="428.043" Loaded="Window_Loaded">
     <Grid>
-        <TextBox HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Height="37" Margin="94,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="295"/>
-        <Label Content="Số lượng" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="12,67,0,0" VerticalAlignment="Top" Height="34"/>
-        <Button Content="OK" FontSize="18" HorizontalAlignment="Left" Margin="101,117,0,0" VerticalAlignment="Top" Width="106" Height="40"/>
-        <Button Content="HỦY" FontSize="18" HorizontalAlignment="Left" Margin="237,117,0,0" VerticalAlignment="Top" Width="106" Height="40"/>
-        <ComboBox x:Name="cbxThietBi" HorizontalAlignment="Left" Margin="94,22,0,0" VerticalAlignment="Top" Width="295" Height="37"/>
-        <Label Content="Thiết bị" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="25,22,0,0" VerticalAlignment="Top" Height="34"/>
-
+        <TextBox x:Name="txtbSoLuong" VerticalContentAlignment="Center" FontSize="18" Height="37" Margin="90,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="295"/>
+        <Label Content="Số lượng" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="3,106,0,0" VerticalAlignment="Top" Height="34"/>
+        <Button x:Name="btnOk" Content="OK" FontSize="18" HorizontalAlignment="Left" Margin="94,159,0,0" VerticalAlignment="Top" Width="106" Height="40" Click="BtnOk_Click"/>
+        <Button x:Name="btnCancel" Content="HỦY" FontSize="18" HorizontalAlignment="Left" Margin="230,159,0,0" VerticalAlignment="Top" Width="106" Height="40" Click="BtnCancel_Click"/>
+        <ComboBox x:Name="cbxThietBi" Margin="90,22,0,0" VerticalAlignment="Top" Height="37" HorizontalAlignment="Left" Width="295"/>
+        <Label Content="Thiết bị" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="16,22,0,0" VerticalAlignment="Top" Height="34"/>
+        <TextBox x:Name="txtbPhong" VerticalContentAlignment="Center" FontSize="18" Height="37" Margin="90,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="295" IsEnabled="False"/>
+        <Label Content="Phòng" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="23,67,0,0" VerticalAlignment="Top" Height="34"/>
     </Grid>
 </Window>

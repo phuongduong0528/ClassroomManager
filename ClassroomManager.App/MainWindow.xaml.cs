@@ -116,8 +116,17 @@ namespace ClassroomManager.App
 
         private void GvPhongHoc_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            QLPhongHocWindow window = new QLPhongHocWindow();
-            window.Show();
+            try
+            {
+                PhongHocDto currentItem = gvPhongHoc.SelectedItem as PhongHocDto;
+                QLPhongHocWindow window = new QLPhongHocWindow(currentItem.TenPhong);
+                window.Show();
+            }
+            catch (Exception)
+            {
+
+            }
+            
         }
 
         private void MenuItemQLTB_Click(object sender, RoutedEventArgs e)
