@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="QLPhongHocWindow" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="Thiết bị và bàn giao" Height="450" Width="800" Loaded="Window_Loaded">
     <Window.Resources>
         <Style x:Key="VerticalContentCentering2"
                TargetType="{x:Type DataGridCell}">

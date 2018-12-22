@@ -18,7 +18,14 @@ namespace ClassroomManager.Services.Adaptor
             phongHocDto.ToaNha = phongHoc.ToaNha.TenToaNha;
             phongHocDto.TenPhong = phongHoc.TenPhong;
             phongHocDto.LoaiPhong = phongHoc.LoaiPhong.TenLoaiPhong;
-            phongHocDto.GhiChu = phongHoc.GhiChu;
+            try
+            {
+                phongHocDto.GhiChu = phongHoc.GhiChu.Trim();
+            }
+            catch(Exception)
+            {
+                phongHocDto.GhiChu = phongHoc.GhiChu;
+            }
             return phongHocDto;
         }
 

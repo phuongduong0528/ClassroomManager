@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="Window1" Height="275.152" Width="467.739" Loaded="Window_Loaded">
+        Title="Đăng nhập" Height="275.152" Width="467.739" Loaded="Window_Loaded">
     <Grid>
         <TextBox x:Name="txtbID" HorizontalAlignment="Left" Height="29" Margin="106,73,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="313" FontSize="18"/>
         <Label Content="ID" HorizontalAlignment="Left" Margin="64,69,0,0" VerticalAlignment="Top" FontSize="18"/>

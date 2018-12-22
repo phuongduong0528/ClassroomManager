@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="UpdateBanGiaoWindow" Height="285" Width="627" Loaded="Window_Loaded">
+        Title="Bàn giao" Height="285" Width="627" Loaded="Window_Loaded">
     <Grid>
         <RichTextBox x:Name="rtbTinhTrang" FontSize="15" Height="177" Margin="10,29,10,0" VerticalAlignment="Top">
             <FlowDocument>

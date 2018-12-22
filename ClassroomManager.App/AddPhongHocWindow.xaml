@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="AddPhongHocWindow" Height="194.116" Width="373" Loaded="Window_Loaded">
+        Title="Thêm phòng học" Height="194.116" Width="373" Loaded="Window_Loaded">
     <Grid>
         <TextBox x:Name="txtbName" HorizontalAlignment="Left" VerticalContentAlignment="Center" Height="30" Margin="136,34,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="176"/>
         <Label Content="Tên phòng" HorizontalAlignment="Left" Margin="70,34,0,0" VerticalAlignment="Top"/>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="UpdateThietBiPhongHoc" Height="251.413" Width="428.043" Loaded="Window_Loaded">
+        Title="Thiết bị" Height="251.413" Width="428.043" Loaded="Window_Loaded">
     <Grid>
         <TextBox x:Name="txtbSoLuong" VerticalContentAlignment="Center" FontSize="18" Height="37" Margin="90,106,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" HorizontalAlignment="Left" Width="295"/>
         <Label Content="Số lượng" HorizontalAlignment="Left" VerticalContentAlignment="Center" FontSize="18" Margin="3,106,0,0" VerticalAlignment="Top" Height="34"/>

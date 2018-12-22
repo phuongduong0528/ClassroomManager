@@ -1,0 +1,20 @@
+﻿<Window x:Class="ClassroomManager.App.ThongKeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ClassroomManager.App"
+        mc:Ignorable="d"
+        Title="ThongKeWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl Height="419" VerticalAlignment="Bottom">
+            <TabItem Header="Phòng học" TextBlock.FontSize="15" Margin="-2,-2,-16,0">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+            <TabItem Header="Thiết bị" TextBlock.FontSize="15" Margin="15,-2,-48,0">
+                <Grid Background="#FFE5E5E5"/>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>

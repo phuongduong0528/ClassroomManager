@@ -17,7 +17,14 @@ namespace ClassroomManager.Services.Adaptor
             ttbgDto.Id = ttbg.Id;
             ttbgDto.Phong = ttbg.PhongHoc.TenPhong;
             ttbgDto.Ngay = ttbg.Ngay.ToString("dd/MM/yyyy", CultureInfo.InvariantCulture);
-            ttbgDto.TinhTrang = ttbg.TinhTrang;
+            try
+            {
+                ttbgDto.TinhTrang = ttbg.TinhTrang.Trim();
+            }
+            catch (Exception)
+            {
+                ttbgDto.TinhTrang = ttbg.TinhTrang;
+            }
             ttbgDto.NguoiDung = ttbg.User.Username;
             return ttbgDto;
         }

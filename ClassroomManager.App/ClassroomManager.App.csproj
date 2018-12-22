@@ -84,6 +84,9 @@
     <Compile Include="QLThietBiWindow.xaml.cs">
       <DependentUpon>QLThietBiWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ThongKeWindow.xaml.cs">
+      <DependentUpon>ThongKeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UpdateBanGiaoWindow.xaml.cs">
       <DependentUpon>UpdateBanGiaoWindow.xaml</DependentUpon>
     </Compile>
@@ -129,6 +132,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="QLThietBiWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ThongKeWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
