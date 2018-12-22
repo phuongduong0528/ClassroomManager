@@ -75,5 +75,10 @@ namespace ClassroomManager.App
                 MessageBox.Show("Không thể thêm", "", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
     }
 }

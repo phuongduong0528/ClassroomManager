@@ -13,6 +13,7 @@ namespace ClassroomManager.App.Controller
         public static string ip;
         public static string port;
         public static string userName;
+        public static string userRole;
 
         public static string ToHashString(string str)
         {

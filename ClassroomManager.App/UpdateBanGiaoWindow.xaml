@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="UpdateBanGiaoWindow" Height="285" Width="627">
+        Title="UpdateBanGiaoWindow" Height="285" Width="627" Loaded="Window_Loaded">
     <Grid>
-        <RichTextBox Height="177" Margin="10,29,10,0" VerticalAlignment="Top">
+        <RichTextBox x:Name="rtbTinhTrang" FontSize="15" Height="177" Margin="10,29,10,0" VerticalAlignment="Top">
             <FlowDocument>
                 <Paragraph>
                     <Run Text=""/>
                 </Paragraph>
             </FlowDocument>
         </RichTextBox>
-        <Label Content="Ghi chú" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
-        <Button Content="OK" HorizontalAlignment="Left" Margin="428,211,0,0" VerticalAlignment="Top" Width="86" Height="37"/>
-        <Button Content="Hủy" HorizontalAlignment="Left" Margin="523,211,0,0" VerticalAlignment="Top" Width="86" Height="37"/>
+        <Label Content="Tình trạng" HorizontalAlignment="Left" Margin="10,3,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="btnOk" Content="OK" HorizontalAlignment="Left" Margin="428,211,0,0" VerticalAlignment="Top" Width="86" Height="37" Click="BtnOk_Click"/>
+        <Button x:Name="btnCancel" Content="Hủy" HorizontalAlignment="Left" Margin="523,211,0,0" VerticalAlignment="Top" Width="86" Height="37" Click="BtnCancel_Click"/>
     </Grid>
 </Window>

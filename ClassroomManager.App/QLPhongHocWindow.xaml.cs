@@ -33,6 +33,11 @@ namespace ClassroomManager.App
         {
             InitializeComponent();
             phongHoc = phong;
+            if(Ultilities.userRole == "Guest")
+            {
+                tabControl.SelectedIndex = 1;
+                (tabControl.Items[0] as TabItem).IsEnabled = false;
+            }
         }
 
         private void BtnThem2_Click(object sender, RoutedEventArgs e)
@@ -45,7 +50,9 @@ namespace ClassroomManager.App
             }
             else
             {
-
+                UpdateBanGiaoWindow window = new UpdateBanGiaoWindow(phongHoc);
+                window.Closed += Window_Closed;
+                window.Show();
             }
         }
 
@@ -67,10 +74,13 @@ namespace ClassroomManager.App
         {
             try
             {
-                ThietBiPhongHocDto currentItem = gvThietBiPhong.SelectedItem as ThietBiPhongHocDto;
-                UpdateThietBiPhongHoc window = new UpdateThietBiPhongHoc(currentItem);
-                window.Closed += Window_Closed;
-                window.Show();
+                if(tabControl.SelectedIndex == 0)
+                {
+                    ThietBiPhongHocDto currentItem = gvThietBiPhong.SelectedItem as ThietBiPhongHocDto;
+                    UpdateThietBiPhongHoc window = new UpdateThietBiPhongHoc(currentItem);
+                    window.Closed += Window_Closed;
+                    window.Show();
+                }
             }
             catch (Exception)
             {
@@ -86,6 +96,18 @@ namespace ClassroomManager.App
             cbxMonth.SelectedItem = DateTime.Now.Month;
             gvBanGiao.ItemsSource = 
                 await bgController.GetByMonth(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
+        }
+
+        private async void CbxMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            try
+            {
+                gvBanGiao.ItemsSource = await bgController.GetByMonth((cbxMonth.SelectedIndex + 1).ToString(), DateTime.Now.Year.ToString());
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 }

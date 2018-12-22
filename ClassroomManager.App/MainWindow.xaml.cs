@@ -28,6 +28,13 @@ namespace ClassroomManager.App
         {
             InitializeComponent();
             phongHocController = new PhongHocController(Ultilities.ip, Ultilities.port);
+            if(Ultilities.userRole == "Guest")
+            {
+                menuItemQT.Visibility = Visibility.Hidden;
+                menuItemQLTB.IsEnabled = false;
+                btnThem.IsEnabled = false;
+                btnUpdate.IsEnabled = false;
+            }
         }
 
         private async void MainFromLoaded(object sender, RoutedEventArgs e)
@@ -132,6 +139,12 @@ namespace ClassroomManager.App
         private void MenuItemQLTB_Click(object sender, RoutedEventArgs e)
         {
             QLThietBiWindow window = new QLThietBiWindow();
+            window.Show();
+        }
+
+        private void QuanTrimenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            QLNguoiDungWindow window = new QLNguoiDungWindow();
             window.Show();
         }
     }

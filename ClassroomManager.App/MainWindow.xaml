@@ -32,7 +32,7 @@
                 <MenuItem x:Name="menuItemQLTB" Header="QL Thiết bị" HorizontalAlignment="Left" Height="30" Width="170" Click="MenuItemQLTB_Click"/>
                 <MenuItem Header="Thống kê" HorizontalAlignment="Left" Height="30" Width="170"/>
             </MenuItem>
-            <MenuItem Header="Quản trị" HorizontalContentAlignment="Center" Height="30" Width="74" FontSize="15"/>
+            <MenuItem x:Name="menuItemQT" Header="Quản trị" HorizontalContentAlignment="Center" Height="30" Width="74" FontSize="15" Click="QuanTrimenuItem_Click"/>
         </Menu>
         <ToolBar Height="40" Margin="-5,29,0,0" VerticalAlignment="Top">
             <Button x:Name="btnThem" Margin="0,0,0,0" HorizontalContentAlignment="Center" Width="92" Content=" Thêm" FontFamily="Segoe UI Symbol" VerticalAlignment="Stretch" FontSize="15" Click="BtnThem_Click"/>

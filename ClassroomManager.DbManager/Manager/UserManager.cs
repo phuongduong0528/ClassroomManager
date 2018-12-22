@@ -14,6 +14,15 @@ namespace ClassroomManager.DbManager.Manager
         {
             try
             {
+                int count = entities.Users.Count();
+                string id = "";
+                do
+                {
+                    count++;
+                    id = count.ToString("D6");
+                }
+                while (entities.Users.Any(u => u.UserId.Equals(id)));
+                user.UserId = id;
                 entities.Users.Add(user);
                 entities.SaveChanges();
                 return true;

@@ -50,6 +50,17 @@ namespace ClassroomManager.App
             bool res = await userController.Auth(txtbID.Text, Ultilities.ToHashString(txtbPass.Password));
             if (res)
             {
+                try
+                {
+                    List<Services.Dto.UserDto> users = await userController.GetAll();
+                    var a = users.SingleOrDefault(u => u.Id.Trim().Equals(txtbID.Text));
+                    Ultilities.userName = a.Username;
+                    Ultilities.userRole = a.Role;
+                }
+                catch (Exception)
+                {
+
+                }
                 MainWindow mainWindow = new MainWindow();
                 mainWindow.Closed += MainWindow_Closed;
                 mainWindow.Show();
