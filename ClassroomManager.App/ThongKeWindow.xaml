@@ -5,13 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ClassroomManager.App"
         mc:Ignorable="d"
-        Title="ThongKeWindow" Height="450" Width="800">
+        Title="ThongKeWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <TabControl Height="419" VerticalAlignment="Bottom">
+        <TabControl>
             <TabItem Header="Phòng học" TextBlock.FontSize="15" Margin="-2,-2,-16,0">
-                <Grid Background="#FFE5E5E5"/>
+                <Grid Background="#FFE5E5E5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="196*"/>
+                        <ColumnDefinition/>
+                        <ColumnDefinition Width="196*"/>
+                    </Grid.ColumnDefinitions>
+                    <GridSplitter HorizontalAlignment="Center"   
+                      VerticalAlignment="Stretch"   
+                      Grid.Column="1"   
+                      Width="5" Background="Silver">
+                    </GridSplitter>
+                    <DataGrid x:Name="gvPH" ColumnWidth="*" Margin="0,34,0,0"/>
+                    <DataGrid x:Name="gvBG" ColumnWidth="*" Grid.Column="2" Margin="0,34,0,0"/>
+                    <Label Content="Phòng học" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="141,1,151,0" VerticalAlignment="Top" Height="34" HorizontalAlignment="Center" Width="100"/>
+                    <Label Content="Bàn giao" Grid.Column="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="145,0,147,0" VerticalAlignment="Top" Height="35" HorizontalAlignment="Center" Width="100"/>
+                </Grid>
             </TabItem>
-            <TabItem Header="Thiết bị" TextBlock.FontSize="15" Margin="15,-2,-48,0">
+            <TabItem Header="Thiết bị" TextBlock.FontSize="15" Margin="15,-2,-48,0" Visibility="Hidden">
                 <Grid Background="#FFE5E5E5"/>
             </TabItem>
         </TabControl>

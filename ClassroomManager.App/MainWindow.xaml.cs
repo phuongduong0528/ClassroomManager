@@ -147,5 +147,11 @@ namespace ClassroomManager.App
             QLNguoiDungWindow window = new QLNguoiDungWindow();
             window.Show();
         }
+
+        private void MenuItemTK_Click(object sender, RoutedEventArgs e)
+        {
+            ThongKeWindow window = new ThongKeWindow();
+            window.Show();
+        }
     }
 }

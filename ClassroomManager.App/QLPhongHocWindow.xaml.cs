@@ -61,8 +61,9 @@ namespace ClassroomManager.App
             try
             {
                 gvThietBiPhong.ItemsSource = await tbController.GetByClass(phongHoc);
-                gvBanGiao.ItemsSource =
+                List<ThongTinBanGiaoDto> a =
                     await bgController.GetByMonth(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
+                gvBanGiao.ItemsSource = a.Where(bg => bg.Phong.Equals(phongHoc));
             }
             catch (Exception)
             {
@@ -93,16 +94,19 @@ namespace ClassroomManager.App
             tbController = new ThietBiPhongHocController(Ultilities.ip, Ultilities.port);
             bgController = new ThongTinBanGiaoController(Ultilities.ip, Ultilities.port);
             gvThietBiPhong.ItemsSource = await tbController.GetByClass(phongHoc);
-            cbxMonth.SelectedItem = DateTime.Now.Month;
-            gvBanGiao.ItemsSource = 
-                await bgController.GetByMonth(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
+            cbxMonth.SelectedIndex = DateTime.Now.Month - 1;
+            List<ThongTinBanGiaoDto> a =
+                    await bgController.GetByMonth(DateTime.Now.Month.ToString(), DateTime.Now.Year.ToString());
+            gvBanGiao.ItemsSource = a.Where(bg => bg.Phong.Equals(phongHoc));
         }
 
         private async void CbxMonth_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             try
             {
-                gvBanGiao.ItemsSource = await bgController.GetByMonth((cbxMonth.SelectedIndex + 1).ToString(), DateTime.Now.Year.ToString());
+                List<ThongTinBanGiaoDto> a =
+                     await bgController.GetByMonth((cbxMonth.SelectedIndex + 1).ToString(), DateTime.Now.Year.ToString());
+                gvBanGiao.ItemsSource = a.Where(bg => bg.Phong.Equals(phongHoc));
             }
             catch (Exception)
             {
